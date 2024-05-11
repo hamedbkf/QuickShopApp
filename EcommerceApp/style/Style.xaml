@@ -1,0 +1,62 @@
+<!-- 
+	resources file for having a unified style on buttons and certain other objects
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="CustomButtonTemplate" TargetType="Button">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+    </ControlTemplate>
+    
+
+	<Style x:Key="PageButtonStyle" TargetType="Button">
+		<Setter Property="Template" Value="{StaticResource CustomButtonTemplate}"/>
+	    <Setter Property="Foreground" Value="#FFFFFFFF"/>
+	    <Setter Property="BorderThickness" Value="0"/>
+	    <Setter Property="BorderBrush" Value="{x:Null}"/>
+	    <Setter Property="FontSize" Value="11"/>
+	    <Setter Property="Background" Value="#FF191919"/>
+	    <Setter Property="FontWeight" Value="SemiBold"/>
+		
+		<Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF000000"/>
+            </Trigger>
+        </Style.Triggers>
+	</Style>
+	
+	
+	<Style TargetType="TextBox" x:Key="CustomTextBoxStyle">
+		<Setter Property="BorderBrush" Value="LightGray"/>
+	    <Setter Property="Background" Value="LightGray"/>
+	</Style>
+	
+	<Style TargetType="TextBlock" x:Key="CustomTextBlockStyle">
+	    <Setter Property="Foreground" Value="#FF191919"/>
+	</Style>
+
+
+	<Style x:Key="DataGridColumnHeaderStyle" TargetType="DataGridColumnHeader">
+	    <Setter Property="Background" Value="#FF191919"/>
+	    <Setter Property="Foreground" Value="#FFFFFFFF"/>
+	</Style>
+
+	<Style x:Key="DataGridRowStyle" TargetType="DataGridRow">
+	    <Style.Resources>
+	        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightGray"/>
+	        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+	    </Style.Resources>
+		<Setter Property="FontWeight" Value="Normal"/>
+    	<Setter Property="Foreground" Value="Black"/>
+	    <Style.Triggers>
+	        <Trigger Property="IsSelected" Value="True">
+	            <Setter Property="FontWeight" Value="SemiBold"/>
+	        </Trigger>
+	    </Style.Triggers>
+	</Style>
+	
+</ResourceDictionary>
