@@ -258,7 +258,7 @@ namespace EcommerceApp {
 		// sets width defaults for datagrid columns for cleaner representation
 		void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e) {
 			foreach (DataGridColumn column in dataGrid.Columns) {
-				column.MinWidth = 100;
+				column.MinWidth = 150;
 			}
 			
 			if (e.Column is DataGridTextColumn) {

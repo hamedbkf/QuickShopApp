@@ -23,7 +23,6 @@ namespace EcommerceApp {
 		// loads the table into datagrid
 		private void LoadDataIntoDataGridView() {
             try {
-            	
                 string query = "SELECT * FROM Contact";
                 
                 using (OracleCommand command = new OracleCommand(query, connection))
@@ -88,13 +87,6 @@ namespace EcommerceApp {
 		}
 		
 		
-		// sets width defaults for datagrid columns for cleaner representation
-		void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e) {
-			foreach (DataGridColumn column in dataGrid.Columns) {
-		        column.MinWidth = 100;
-		    }
-		}
-		
 		// respond to question button, if "repondu" is "non" it will update it to "oui" and add your response
 		void conrepbtn_Click(object sender, RoutedEventArgs e) {
 			var selectedRow = dataGrid.SelectedItem as DataRowView;
@@ -124,6 +116,23 @@ namespace EcommerceApp {
 			    }
 			}
 		}
+        
+		
+        // sets width defaults for datagrid columns for cleaner representation
+        void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e) {
+        	foreach (DataGridColumn column in dataGrid.Columns) {
+        		column.MinWidth = 100;
+        	}
+
+        	if (e.Column is DataGridTextColumn) {
+        		DataGridTextColumn textColumn = e.Column as DataGridTextColumn;
+
+        		if (e.PropertyName == "SUJET") {
+        			textColumn.Width = new DataGridLength(200);
+        		}
+
+        	}
+        }
 		
 	}
 }

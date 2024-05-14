@@ -12,7 +12,6 @@ namespace EcommerceApp {
 		public Sign() {
 			InitializeComponent();
 			connection = DatabaseManager.GetConnection();
-
 		}
 		
 		// input control

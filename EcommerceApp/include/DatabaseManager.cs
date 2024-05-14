@@ -20,13 +20,6 @@ namespace EcommerceApp {
 
             return connection;
         }
-		
-        public static void CloseConnection() {
-            if (connection != null && connection.State == System.Data.ConnectionState.Open) {
-                connection.Close();
-                connection.Dispose();
-                connection = null;
-            }
-        }
+        
     }
 }

@@ -24,7 +24,6 @@ namespace EcommerceApp {
 		// loads the table into datagrid
 		private void LoadDataIntoDataGridView() {
             try {
-            	
                 string query = "SELECT * FROM Categorie";
                 
                 using (OracleCommand command = new OracleCommand(query, connection))
@@ -46,7 +45,6 @@ namespace EcommerceApp {
 		
 		// updates the input fields with the columns of selected row for easier modification
 		void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-			
 		    if (dataGrid.SelectedItem != null) {
 		        
 		        var selectedRow = dataGrid.SelectedItem as DataRowView;
@@ -59,7 +57,6 @@ namespace EcommerceApp {
 		
 		// add new row in database with data in the input fields
 		void ajtcatbtn_Click(object sender, RoutedEventArgs e) {
-			
 			if (!ControleSaisie()) {
 				error_result(resultatop, lefttick, righttick);
 				return;
@@ -96,8 +93,7 @@ namespace EcommerceApp {
 
 		    if (selectedRow != null) {
 		        int catid = Convert.ToInt32(selectedRow.Row[0]);
-		
-
+		        
 		        try {
 		            string query = "DELETE FROM Categorie WHERE id = :id";
 		            
@@ -132,7 +128,6 @@ namespace EcommerceApp {
 				}
 		
 				string catnom = catnomtb.Text;
-		    	
 
 			    using (OracleCommand command = new OracleCommand()) {
 			        command.Connection = connection;
@@ -216,7 +211,6 @@ namespace EcommerceApp {
 		        column.MinWidth = 150;
 		    }
 		}
-		
 		
 	}
 }

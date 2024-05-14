@@ -53,7 +53,6 @@ namespace EcommerceApp {
 		
 		// updates the input fields with the columns of selected row for easier modification
 		void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-			
 		    if (dataGrid.SelectedItem != null) {
 			    var selectedRow = dataGrid.SelectedItem as DataRowView;
 		        if (selectedRow != null && selectedRow.Row.ItemArray.Length > 1) {
@@ -242,7 +241,6 @@ namespace EcommerceApp {
 			}
 			
 		}
-		
 		
 				    
 	    // specifies search query and calls another method to execute it and update the datagrid

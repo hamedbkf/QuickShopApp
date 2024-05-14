@@ -38,7 +38,7 @@ namespace EcommerceApp {
 	                // executescalar is the fastest and easiest method to return just 1 variable
                     int userCount = Convert.ToInt32(command.ExecuteScalar());
                     if (userCount > 0) { 
-	                    // admin name to display it in the main app
+	                    // admin name and superadmin status for use in the main app
 	                    string namequery = String.Format("SELECT name, superadmin FROM Admin WHERE email = '{0}'",username);
 	                    string loggeduser = "";
 	                    string superadmin = "";

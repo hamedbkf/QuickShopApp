@@ -9,7 +9,7 @@ namespace EcommerceApp {
 
 	    private string superadm;
 	    
-	    // window constructor, takes admin name from when the login window calls it
+	    // window constructor, takes admin name and superadmin status from when the login window calls it
 		public MainWindow(string username, string superadmin) {
 			InitializeComponent();
 			loggedtbl.Text= "Connecté: " + username;
@@ -17,8 +17,8 @@ namespace EcommerceApp {
 			MainApp.Content = new Categories();
 		}
 		
-		
-		// changes the form content based on button clicked, accordingly with each page
+		// i implemented a tabs feature with a navigation bar at the top, using a form that switches between pages.
+		// changes the form content based on button clicked, accordingly with each page:
 		void catBtn_Click(object sender, RoutedEventArgs e) {
     		ChangeButtonBorder((Button)sender);
 			MainApp.Content = new Categories();
